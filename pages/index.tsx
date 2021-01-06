@@ -31,9 +31,14 @@ export async function getStaticProps() {
     return { props: { posts } }
 }
 
-const Posts = (props: { posts: FetcherResult }) => <div>
-    {props.posts.contents.map(v => <div key={v.title}><h1>{v.title}</h1><div dangerouslySetInnerHTML={{ __html: v.body }}></div></div>)}
+const Posts = (props: { posts: FetcherResult }) => <div className="flex flex-col">
+    <div className="text-5xl">NoTitle</div>
+    {props.posts.contents.map(v => (
+        <div className="flex flex-col py-3" key={v.title}>
+            <div className="text-3xl">{v.title}</div>
+            <div dangerouslySetInnerHTML={{ __html: v.body }}></div>
+        </div>
+    ))}
 </div>
-
 
 export default Posts
