@@ -7,11 +7,17 @@ export async function getStaticProps() {
 }
 
 const Posts = (props: { data: FetcherResult<PostData> }) => (
-    <div className="flex flex-col mx-20">
-        <div className="text-5xl">Diary</div>
-        {props.data.contents.map(v => (
-            <Post {...v} />
-        ))}
+    <div className="flex justify-center">
+        <div className="sm:w-4/5 md:w-3/5 max-w-3xl">
+            <div className="my-5 text-5xl">Diary</div>
+            <div>
+                {props.data.contents.map(v => (
+                    <div className="my-10">
+                        <Post {...v}/>
+                    </div>
+                ))}
+            </div>
+        </div>
     </div>
 )
 

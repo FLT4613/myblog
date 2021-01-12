@@ -11,11 +11,11 @@ export type PostData = {
 }
 
 const Post = (props: PostData) => (
-    <div className="flex flex-col py-3" key={props.title}>
+    <div className="flex flex-col p-3 shadow-md rounded-md overflow-hidden bg-white" key={props.title}>
         <div className="text-l">
             {format(parseISO(props.publishedAt), 'yyyy/MM/dd')}
-            </div>
-        <div className="text-3xl">{props.title}</div>
+        </div>
+        <div className="text-3xl py-3">{props.title}</div>
         <div dangerouslySetInnerHTML={{ __html: props.body }}></div>
     </div>
 )
