@@ -11,7 +11,7 @@ export type PostData = {
 }
 
 const Post = (props: PostData) => (
-    <div className="flex flex-col p-3 shadow-md rounded-md overflow-hidden bg-white" key={props.title}>
+    <div className="flex flex-col p-5 shadow-md rounded-md overflow-hidden bg-white" key={props.title}>
         <div className="text-l">
             {format(parseISO(props.publishedAt), 'yyyy/MM/dd')}
         </div>
