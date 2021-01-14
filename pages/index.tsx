@@ -10,8 +10,8 @@ const Posts = (props: { data: FetcherResult<PostData> }) => (
     <>
         <div className="my-5 text-5xl">Diary</div>
         <div>
-            {props.data.contents.map(v => (
-                <div className="my-10">
+            {props.data.contents.map((v, i) => (
+                <div key={i} className="my-10">
                     <Post {...v} />
                 </div>
             ))}
