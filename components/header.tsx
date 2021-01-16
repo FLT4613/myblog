@@ -12,7 +12,7 @@ type HeaderLinkType = {
 }
 
 const HeaderItem: React.FC<HeaderItemType> = ({ isActive, label }) => (
-    <div className={`p-2 rounded-lg hover:bg-gray-200 cursor-pointer ${isActive ? "bg-gray-300" : ""}`}>
+    <div className={`p-2 rounded-lg hover:bg-gray-200 cursor-pointer ${isActive ? "underline font-bold" : ""}`}>
         {label}
     </div>
 )
