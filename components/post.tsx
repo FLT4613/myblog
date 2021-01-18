@@ -16,7 +16,7 @@ const Post = (props: PostData) => (
             {format(parseISO(props.publishedAt), 'yyyy/MM/dd')}
         </div>
         <div className="text-3xl py-3">{props.title}</div>
-        <div dangerouslySetInnerHTML={{ __html: props.body }}></div>
+        <div className="prose" dangerouslySetInnerHTML={{ __html: props.body }}></div>
     </div>
 )
 
