@@ -26,8 +26,8 @@ const HeaderLink: React.FC<HeaderLinkType & HeaderItemType> = React.forwardRef((
 ))
 
 const headerNamePathMapper = {
-    Blog: "/",
-    About: "/about"
+    About: "/",
+    Blog: "/blog"
 }
 
 const Header = () => {
