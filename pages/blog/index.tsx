@@ -1,4 +1,5 @@
 import Post, { PostData } from '../../components/post'
+import { getPosts } from '../../utils/fetcher'
 
 export type ContentList<T> = {
     contents: T[],
@@ -8,7 +9,7 @@ export type ContentList<T> = {
 }
 
 export async function getStaticProps() {
-    const data = await fetcher<PostData>('/blog')
+    const data = await getPosts()
     return { props: { data } }
 }
 
