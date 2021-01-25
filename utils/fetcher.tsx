@@ -1,4 +1,4 @@
-import { PostData } from '../components/post'
+import { Post } from '../components/post/types'
 export type ContentList<T> = {
     contents: T[],
     totalCount: number,
@@ -18,17 +18,17 @@ const fetcher = <T,>(path: string): Promise<T> => fetch(
     .then(res => res.json())
 
 const getPostIds = async () => {
-    const posts = await fetcher<ContentList<PostData>>('/blog')
+    const posts = await fetcher<ContentList<Post>>('/blog')
     return posts.contents.map(v => v.id)
 }
 
 const getPosts = async () => {
-    const posts = await fetcher<ContentList<PostData>>('/blog')
+    const posts = await fetcher<ContentList<Post>>('/blog')
     return posts
 }
 
 const getPost = async (id: string) => {
-    const post = await fetcher<PostData>(`/blog/${id}`)
+    const post = await fetcher<Post>(`/blog/${id}`)
     return post
 }
 
