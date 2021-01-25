@@ -1,12 +1,18 @@
 import Post, { PostData } from '../../components/post'
-import { fetcher, FetcherResult } from '../../utils/fetcher'
+
+export type ContentList<T> = {
+    contents: T[],
+    totalCount: number,
+    offset: number,
+    limit: number
+}
 
 export async function getStaticProps() {
     const data = await fetcher<PostData>('/blog')
     return { props: { data } }
 }
 
-const Posts = (props: { data: FetcherResult<PostData> }) => (
+const Posts = (props: { data: ContentList<PostData> }) => (
     <>
         <div className="my-5 text-5xl">Diary</div>
         <div>
