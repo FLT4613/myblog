@@ -23,5 +23,14 @@
         "totalCount": 2,
         "offset": 0,
         "limit": 10
+    },
+    "fkt_oaqah": {
+        "id": "fkt_oaqah",
+        "createdAt": "2021-01-03T08:58:35.822Z",
+        "updatedAt": "2021-01-03T08:58:35.822Z",
+        "publishedAt": "2021-01-03T08:58:35.822Z",
+        "revisedAt": "2021-01-03T08:58:35.822Z",
+        "title": "tesuto2",
+        "body": "<p>next たのしい<br></p>"
     }
 }
