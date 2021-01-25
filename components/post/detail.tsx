@@ -1,16 +1,8 @@
 import { format, parseISO } from 'date-fns'
+import { Post } from './types'
 
-export type PostData = {
-    id: string,
-    createdAt: string,
-    updatedAt: string,
-    publishedAt: string,
-    revisedAt: string,
-    title: string,
-    body: string
-}
 
-const Post = (props: PostData) => (
+const Component = (props: Post) => (
     <div className="flex flex-col p-5 shadow-md rounded-md overflow-hidden bg-white" key={props.title}>
         <div className="text-l">
             {format(parseISO(props.publishedAt), 'yyyy/MM/dd')}
@@ -20,4 +12,4 @@ const Post = (props: PostData) => (
     </div>
 )
 
-export default Post
+export default Component

@@ -1,4 +1,4 @@
-import Post, { PostData } from '../../components/post'
+import Post, { PostData } from '../../components/post/detail'
 import { getPost, getPostIds } from '../../utils/fetcher'
 import { GetStaticProps } from 'next';
 

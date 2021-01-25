@@ -4,20 +4,14 @@ import { getPosts } from '../../utils/fetcher'
 
 export async function getStaticProps() {
     const data = await getPosts()
-    return { props: { data } }
+    return { props: data }
 }
 
 const Component = (props: ContentList<Post>) => (
     <>
         <div className="my-5 text-5xl">Diary</div>
-        <div>
-            {props.data.contents.map((v, i) => (
-                <div key={i} className="my-10">
-                    <Post {...v} />
-                </div>
-            ))}
-        </div>
+        <PostList {...props} />
     </>
 )
 
-export default Posts
+export default Component
