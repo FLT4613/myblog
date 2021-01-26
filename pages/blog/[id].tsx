@@ -1,10 +1,10 @@
-import Post, { PostData } from '../../components/post/detail'
+import PostDetail from '../../components/post/detail'
+import { Post } from '../../components/post/types'
 import { getPost, getPostIds } from '../../utils/fetcher'
 import { GetStaticProps } from 'next';
+import { InferGetStaticPropsType } from 'next'
 
-type Props = { id: string }
-
-export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
+export const getStaticProps: GetStaticProps<Post> = async ({ params }) => {
     if (!params || typeof params.id !== 'string') {
         throw new Error;
     }
@@ -20,8 +20,8 @@ export async function getStaticPaths() {
     }
 }
 
-const comp = (props: PostData) => {
-    return <Post {...props}/>
+const Component = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
+    return <PostDetail {...props} />
 }
 
-export default comp
+export default Component
