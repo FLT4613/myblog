@@ -1,6 +1,6 @@
 import { format, parseISO } from 'date-fns'
-import { Post } from './types'
 
+import { Post } from '../../types/types'
 
 const Component = (props: Post) => (
     <div className="flex flex-col p-5 shadow-md rounded-md overflow-hidden bg-white" key={props.title}>

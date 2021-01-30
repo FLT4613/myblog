@@ -1,10 +1,4 @@
-import { Post } from '../components/post/types'
-export type ContentList<T> = {
-    contents: T[],
-    totalCount: number,
-    offset: number,
-    limit: number
-}
+import { Post, ContentList } from '../types/types'
 
 type HeadersWithAPIKey = HeadersInit & { 'X-API-KEY': string }
 

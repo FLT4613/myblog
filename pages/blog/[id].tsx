@@ -1,5 +1,5 @@
 import PostDetail from '../../components/post/detail'
-import { Post } from '../../components/post/types'
+import { Post } from '../../types/types'
 import { getPost, getPostIds } from '../../utils/fetcher'
 import { GetStaticProps } from 'next';
 import { InferGetStaticPropsType } from 'next'

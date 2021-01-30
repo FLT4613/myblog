@@ -1,4 +1,4 @@
-import { ContentList, Post } from './types'
+import { ContentList, Post } from '../../types/types'
 
 const Component = (props: ContentList<Post>) => (
     <div>
