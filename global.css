@@ -5,3 +5,7 @@
 body {
     background-color: whitesmoke
 }
+
+.list-item {
+    min-height: 232px;
+}

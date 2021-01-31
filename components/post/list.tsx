@@ -1,11 +1,12 @@
 import { ContentList, Post } from '../../types/types'
+import ListItem from './listitem'
 
 const Component = (props: ContentList<Post>) => (
-    <div>
+    <div className="flex flex-wrap">
         {props.contents.map((v, i) => (
-            <div key={i} className="my-10">
-                <div>{v.id}</div>
-            </div>
+            <a href={`/blog/${v.id}`} className="m-1">
+                <ListItem key={i} {...v} />
+            </a>
         ))}
     </div>
 )
