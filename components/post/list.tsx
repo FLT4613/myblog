@@ -14,7 +14,10 @@ const Component = (props: ContentList<Post>) => {
 
     return (
         <div>
-            <input className="border my-10 p-2 w-full" type="text" onKeyDown={onInput}></input>
+            <div className="flex justify-between items-center my-10">
+                <div className="text-5xl">Diary</div>
+                <input className="border p-2" type="text" onKeyDown={onInput}></input>
+            </div>
             <div className="flex flex-wrap">
                 {props.contents.filter(v => !query || (v.title.includes(query) || v.body.includes(query))).map((v, i) => (
                     <a href={`/blog/${v.id}`} className="m-1">

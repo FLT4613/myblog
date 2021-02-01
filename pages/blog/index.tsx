@@ -9,7 +9,6 @@ export async function getStaticProps() {
 
 const Component = (props: InferGetStaticPropsType<typeof getStaticProps>) => (
     <>
-        <div className="my-5 text-5xl">Diary</div>
         <PostList {...props} />
     </>
 )
