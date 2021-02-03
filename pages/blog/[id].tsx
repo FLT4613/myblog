@@ -4,11 +4,8 @@ import { getPost, getPostIds } from '../../utils/fetcher'
 import { GetStaticProps } from 'next';
 import { InferGetStaticPropsType } from 'next'
 
-export const getStaticProps: GetStaticProps<Post> = async ({ params }) => {
-    if (!params || typeof params.id !== 'string') {
-        throw new Error;
-    }
-    const data = await getPost(params.id)
+export const getStaticProps: GetStaticProps<Post> = async context => {
+    const data = await getPost(context)
     return { props: data }
 }
 
@@ -16,7 +13,7 @@ export async function getStaticPaths() {
     const ids = await getPostIds()
     return {
         paths: ids.map(v => ({ params: { id: v } })),
-        fallback: false
+        fallback: true
     }
 }
 

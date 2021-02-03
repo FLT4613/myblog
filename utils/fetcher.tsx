@@ -1,5 +1,5 @@
 import { Post, ContentList } from '../types/types'
-
+import { GetStaticPropsContext } from 'next'
 type HeadersWithAPIKey = HeadersInit & { 'X-API-KEY': string }
 
 const fetcher = <T,>(path: string): Promise<T> => fetch(
@@ -21,8 +21,10 @@ const getPosts = async () => {
     return posts
 }
 
-const getPost = async (id: string) => {
-    const post = await fetcher<Post>(`/blog/${id}`)
+const getPost = async (context: GetStaticPropsContext) => {
+    const id = context.params?.id
+    const draftKey = context.previewData?.draftKey ? `draftKey=${context.previewData.draftKey}` : ''
+    const post = await fetcher<Post>(`/blog/${id}${draftKey}`)
     return post
 }
 
