@@ -23,7 +23,7 @@ const getPosts = async () => {
 
 const getPost = async (context: GetStaticPropsContext) => {
     const id = context.params?.id
-    const draftKey = context.previewData?.draftKey ? `draftKey=${context.previewData.draftKey}` : ''
+    const draftKey = context.previewData?.draftKey ? `?draftKey=${context.previewData.draftKey}` : ''
     const post = await fetcher<Post>(`/blog/${id}${draftKey}`)
     return post
 }
