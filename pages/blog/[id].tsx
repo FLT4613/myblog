@@ -18,6 +18,9 @@ export async function getStaticPaths() {
 }
 
 const Component = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
+    if (Object.keys(props).length === 0) {
+        return <div>Not Found</div>
+    }
     return <PostDetail {...props} />
 }
 
