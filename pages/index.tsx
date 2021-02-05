@@ -1,7 +1,12 @@
 import Image from 'next/image'
+import Head from 'next/head'
+
 
 const About = () => (
     <div className="flex justify-center">
+        <Head>
+            <title>About</title>
+        </Head>
         <div>
             <div className="text-center text-4xl">About</div>
             <Image width="256" height="256" className="rounded-full" src={process.env.NEXT_PUBLIC_PROFILE_SRC || ""} />
