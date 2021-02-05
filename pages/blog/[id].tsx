@@ -4,6 +4,7 @@ import { getPost, getPostIds } from '../../utils/fetcher'
 import { GetStaticProps } from 'next';
 import { InferGetStaticPropsType } from 'next'
 import Head from 'next/head'
+import Error from 'next/error'
 
 export const getStaticProps: GetStaticProps<Post> = async context => {
     const data = await getPost(context)
@@ -20,12 +21,7 @@ export async function getStaticPaths() {
 
 const Component = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
     if (Object.keys(props).length === 0) {
-        return <>
-            <Head>
-                <title>Page not found</title>
-            </Head>
-            <div>Not Found</div>
-        </>
+        return <Error statusCode={404} />
     }
     return <>
         <Head>
