@@ -5,10 +5,14 @@ import { GetStaticProps } from 'next';
 import { InferGetStaticPropsType } from 'next'
 import Head from 'next/head'
 import Error from 'next/error'
+import remark from 'remark'
+import html from 'remark-html'
 
 export const getStaticProps: GetStaticProps<Post> = async context => {
     const data = await getPost(context)
-    return { props: data }
+    const body = await remark().use(html).process(data.body).toString()
+
+    return { props: { ...data, body } }
 }
 
 export async function getStaticPaths() {

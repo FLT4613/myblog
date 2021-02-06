@@ -1,5 +1,4 @@
 import { format, parseISO } from 'date-fns'
-
 import { Post } from '../../types/types'
 
 const Component = (props: Post) => (
