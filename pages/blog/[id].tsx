@@ -10,9 +10,8 @@ import html from 'remark-html'
 
 export const getStaticProps: GetStaticProps<Post> = async context => {
     const data = await getPost(context)
-    const body = await remark().use(html).process(data.body).toString()
-
-    return { props: { ...data, body } }
+    const body = await remark().use(html).process(data.body)
+    return { props: { ...data, body: body.toString() } }
 }
 
 export async function getStaticPaths() {
