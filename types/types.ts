@@ -5,7 +5,8 @@ export type Post = {
     publishedAt: string,
     revisedAt: string,
     title: string,
-    body: string
+    body: string,
+    thumbnail: string
 }
 
 export type ContentList<T> = {
