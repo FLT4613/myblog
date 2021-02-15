@@ -6,7 +6,11 @@ export type Post = {
     revisedAt: string,
     title: string,
     body: string,
-    thumbnail: string
+    thumbnail: {
+        url: string,
+        width: number,
+        height: number
+    }
 }
 
 export type ContentList<T> = {
